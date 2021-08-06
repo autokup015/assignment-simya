@@ -6,7 +6,7 @@ export default function Tables({ newData, nameColor }) {
       <table className="border-collapse" style={{ width: "100%" }}>
         <tbody>
           <tr style={{ borderBottom: "1px solid darkgray" }}>
-            <th className="text-left">Name</th>
+            <th style={{ textAlign: "left" }}>Name</th>
             <th className="text-center">Rank</th>
             <th className="text-center">Number of bananas</th>
             <th className="text-center">isCurrentUser?</th>
