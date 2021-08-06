@@ -3,7 +3,7 @@ import React from "react";
 export default function Tables({ newData, nameColor }) {
   return (
     <div className="max-w-screen-lg m-auto">
-      <table className="border-collapse w-full">
+      <table className="border-collapse" style={{ width: "100%" }}>
         <tbody>
           <tr className="text-left border-b border-gray-400">
             <th>Name</th>
@@ -20,7 +20,9 @@ export default function Tables({ newData, nameColor }) {
                   </td>
                   <td className="text-center">{item.rank}</td>
                   <td className="text-center">{item.bananas}</td>
-                  <td className="text-center">{item.subscribed ? "yes" : "no"}</td>
+                  <td className="text-center">
+                    {item.subscribed ? "yes" : "no"}
+                  </td>
                 </tr>
               );
             })}
