@@ -40,7 +40,9 @@ export default function Home() {
       arr.push(getdata[key]);
     });
 
-    let sortData = arr.sort((a, b) => {
+    let filterSubscribed = arr.filter(data => data.subscribed == true)
+
+    let sortData = filterSubscribed.sort((a, b) => {
       return b.bananas - a.bananas;
     });
 
@@ -49,6 +51,7 @@ export default function Home() {
     });
 
     setNewArr(sortData);
+    console.log('New data for render : ', sortData)
   };
 
   const topTenData = () => {
@@ -72,7 +75,7 @@ export default function Home() {
     if (search != "") {
       if (find) {
         setNameColor(find.name);
-
+        topTenData()
         if (find.rank >= 10) {
           let filter = cloneNewArr.sort((a, b) => {
             return b.bananas - a.bananas;
@@ -85,6 +88,7 @@ export default function Home() {
           setNewData(lastData);
         }
       } else {
+        topTenData()
         setStatusAlert(true);
         setNameColor("");
         setSearch("");
